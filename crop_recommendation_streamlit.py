@@ -36,7 +36,7 @@ rainfall = st.number_input('Rainfall (mm)', min_value=0.0, max_value=500.0, valu
     # Create a button to trigger the prediction
 if st.button('Recommend Crop'):
         # Prepare the input data for the model
-input_data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
+    input_data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
 
         # Make a prediction
 prediction = model.predict(input_data)

@@ -8,8 +8,8 @@ Original file is located at
 """
 
 import streamlit as st
-    import pickle
-    import numpy as np
+import pickle
+import numpy as np
 
     # Load the trained model
     # Make sure the model file (RandomForest.pkl in this case) is in the same directory as your app.py

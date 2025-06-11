@@ -20,26 +20,26 @@ except FileNotFoundError:
         st.error("Model file not found. Please make sure 'RandomForest.pkl' is in the correct directory.")
         st.stop()
 
-    st.title('Crop Recommendation System')
+st.title('Crop Recommendation System')
 
-    st.header('Enter the environmental parameters:')
+st.header('Enter the environmental parameters:')
 
     # Create input fields for each feature
-    N = st.number_input('Nitrogen (N)', min_value=0.0, max_value=200.0, value=104.0)
-    P = st.number_input('Phosphorus (P)', min_value=0.0, max_value=200.0, value=18.0)
-    K = st.number_input('Potassium (K)', min_value=0.0, max_value=200.0, value=30.0)
-    temperature = st.number_input('Temperature (°C)', min_value=-20.0, max_value=50.0, value=23.6)
-    humidity = st.number_input('Humidity (%)', min_value=0.0, max_value=100.0, value=60.3)
-    ph = st.number_input('pH', min_value=0.0, max_value=14.0, value=6.7)
-    rainfall = st.number_input('Rainfall (mm)', min_value=0.0, max_value=500.0, value=140.9)
+N = st.number_input('Nitrogen (N)', min_value=0.0, max_value=200.0, value=104.0)
+P = st.number_input('Phosphorus (P)', min_value=0.0, max_value=200.0, value=18.0)
+K = st.number_input('Potassium (K)', min_value=0.0, max_value=200.0, value=30.0)
+temperature = st.number_input('Temperature (°C)', min_value=-20.0, max_value=50.0, value=23.6)
+humidity = st.number_input('Humidity (%)', min_value=0.0, max_value=100.0, value=60.3)
+ph = st.number_input('pH', min_value=0.0, max_value=14.0, value=6.7)
+rainfall = st.number_input('Rainfall (mm)', min_value=0.0, max_value=500.0, value=140.9)
 
     # Create a button to trigger the prediction
-    if st.button('Recommend Crop'):
+if st.button('Recommend Crop'):
         # Prepare the input data for the model
-        input_data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
+    input_data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
 
         # Make a prediction
-        prediction = model.predict(input_data)
+prediction = model.predict(input_data)
 
         # Display the prediction
-        st.success(f'The recommended crop is: {prediction[0]}')
+st.success(f'The recommended crop is: {prediction[0]}')

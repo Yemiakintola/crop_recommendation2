@@ -39,7 +39,7 @@ if st.button('Recommend Crop'):
     input_data = np.array([[N, P, K, temperature, humidity, ph, rainfall]])
 
         # Make a prediction
-prediction = model.predict(input_data)
+    prediction = model.predict(input_data)
 
         # Display the prediction
 st.success(f'The recommended crop is: {prediction[0]}')

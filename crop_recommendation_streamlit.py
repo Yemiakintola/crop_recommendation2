@@ -13,10 +13,10 @@ import numpy as np
 
     # Load the trained model
     # Make sure the model file (RandomForest.pkl in this case) is in the same directory as your app.py
-    try:
-        with open('RandomForest.pkl', 'rb') as model_file:
+try:
+    with open('RandomForest.pkl', 'rb') as model_file:
             model = pickle.load(model_file)
-    except FileNotFoundError:
+except FileNotFoundError:
         st.error("Model file not found. Please make sure 'RandomForest.pkl' is in the correct directory.")
         st.stop()
 
